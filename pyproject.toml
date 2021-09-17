@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "tiralabra"
+version = "0.1.0"
+description = ""
+authors = ["Jesper Grönroos <jesper.gronroos@hotmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+mnist = "^0.2.2"
+coverage = "^5.5"
+invoke = "^1.6.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+pylint = "^2.11.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

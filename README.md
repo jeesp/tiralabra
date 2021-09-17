@@ -1,4 +1,4 @@
-# Numerontunnistus neuroverkolla
+# Numerontunnistus k-lähimmän naapurin algoritmilla
 
 Projektissa toteutetaan ohjelma käsinkirjoitetun numeron tunnistamiseen.
 
@@ -9,3 +9,35 @@ Projektissa toteutetaan ohjelma käsinkirjoitetun numeron tunnistamiseen.
 ## Viikkoraportit
 
 [Viikko 1](https://github.com/jeesp/tiralabra/blob/main/dokumentaatio/viikkoraportit/viikko1.md)
+
+## Käyttöohje testaamiseen
+
+<h3> Konfigurointi </h3>
+
+1. Asenna riippuvuudet komennolla:
+
+```bash
+poetry install
+```
+
+Ohjeet Poetryn lataamiseen löydät tarvittaessa esimerkiksi [täältä](https://ohjelmistotekniikka-hy.github.io/python/poetry).
+
+## Testaus
+
+1. Testit voi suorittaa komennolla:
+
+```bash
+poetry run invoke test
+```
+
+2. Testikattavuusraportin voi generoida komennolla:
+
+```bash
+poetry run invoke coverage-report
+```
+
+3. Pylint-tarkistuksen voi suorittaa komennolla:
+
+```bash
+poetry run invoke lint
+```
