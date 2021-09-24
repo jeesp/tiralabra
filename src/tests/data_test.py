@@ -5,7 +5,7 @@ class TestData(unittest.TestCase):
 
     def test_train_data_length(self):
         data = load_traindata()
-        self.assertEqual(len(data), 100)
+        self.assertEqual(len(data), 1000)
     def test_test_data_length(self):
         data = load_testdata()
         self.assertEqual(len(data), 100)

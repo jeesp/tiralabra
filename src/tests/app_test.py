@@ -12,3 +12,6 @@ class TestApp(unittest.TestCase):
         distance1 = self.app.distance_calculation(row1, row2)
         distance2 = self.app.distance_calculation(row1, row3)
         self.assertGreater(distance2, distance1)
+    
+    def test_process_image(self):
+        img = []

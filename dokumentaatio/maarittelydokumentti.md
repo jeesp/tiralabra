@@ -2,19 +2,19 @@
 
 Projekti toteutetaan Pythonilla ja pystyn sillä tehtyjä projekteja vertaisarvioimaan. Olen tietojenkäsittelytieteen kandiopiskelija. Dokumentaatio tehdään suomeksi.
 
-Toteutan projektissani numerontunnistuksen yksikerroksisella neuroverkolla. Projektissa rakennetaan neuroverkko ja sen oppimisalgoritmi.
+Toteutan projektissani numerontunnistuksen k-n lähimmän naapurin algoritmilla.
 
 Syötteenä ohjelmaan annetaan kuva käsinpiirrettystä numerosta, jonka ohjelma tulkitsee numeroksi väliltä 0-9.
 
 ### O-analyysit
 
-Matriisien tulon aikavaativuus O(i∗j∗k), jossa Mij∗Mjk.
-Neuroverkon aika- ja tilavaativuus on O(i∗j∗k∗s∗t), missä s ja t tulee neuroverkon aktivaatiofunktiosta.
+K-n lähimmän naapurin algoritmin aikavaativuus on O(nd), missä n=harjoitusdatan koko, d on 28x28 (pikseleiden määrä yhdessä kuvassa).
+Tilavaatimus on O(nd), harjoitusdatan koko x 28x28 pikseliä.
 
 ### Lähteet:
 
-https://ai.stackexchange.com/questions/5728/what-is-the-time-complexity-for-training-a-neural-network-using-back-propagation/5730
+https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm
 
-https://fi.m.wikipedia.org/wiki/Neuroverkot
+https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761
 
-https://en.wikipedia.org/wiki/Artificial_neural_network
+https://stats.stackexchange.com/questions/219655/k-nn-computational-complexity

@@ -11,7 +11,7 @@ def load_traindata():
     train_labels = mnist.train_labels()
     i = 0
     training_sample = []
-    while i < 100:
+    while i < 1000:
         number = random.randint(0,len(train_images)-1)
         training_sample.append((train_images[number], train_labels[number]))
         i += 1
