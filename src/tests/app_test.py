@@ -14,4 +14,6 @@ class TestApp(unittest.TestCase):
         self.assertGreater(distance2, distance1)
     
     def test_process_image(self):
-        img = []
+        img = self.app.testdata[0]
+        result = self.app.process_image(img)
+        self.assertEqual(len(result[1]), 7)

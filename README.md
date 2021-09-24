@@ -10,6 +10,7 @@ Projektissa toteutetaan ohjelma käsinkirjoitetun numeron tunnistamiseen.
 
 [Viikko 1](https://github.com/jeesp/tiralabra/blob/main/dokumentaatio/viikkoraportit/viikko1.md)
 [Viikko 2](https://github.com/jeesp/tiralabra/blob/main/dokumentaatio/viikkoraportit/viikko2.md)
+[Viikko 3](https://github.com/jeesp/tiralabra/blob/main/dokumentaatio/viikkoraportit/viikko3.md)
 
 ## Käyttöohje testaamiseen
 

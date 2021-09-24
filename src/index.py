@@ -1,5 +1,4 @@
 from app.app import App
-import time
 
 def main():
     """

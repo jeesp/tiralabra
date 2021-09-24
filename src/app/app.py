@@ -10,7 +10,6 @@ class App:
         self.traindata = load_traindata()
         self.testdata = load_testdata()
         self.nearestneighbors = []
-        
 
     def process_image(self, input_image):
         """
