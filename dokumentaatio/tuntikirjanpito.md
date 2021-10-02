@@ -8,4 +8,7 @@
 | 17.9. | 4    | Testauksen luominen, laaduntarkastuksen lisääminen, kattavuusraportin lisääminen   |
 | 23.9. | 3    | Algoritmin toimintaan saattaminen yms                                              |
 | 24.9. | 4    | Bytearrayn muuttaminen graafiseen muotoon, tkinterin käyttöönotto jne              |
+| 29.9. | 4    | Piirto-ominaisuuden edistämistä, bytearrayn koon muuttamista                       |
+| 30.9. | 4    | Piirto-ominaisuuden hylkääminen ja "kuvavalikon" aloittaminen                      |
+| 2.10. | 2    | Listan valmiin järjestämisalgoritmin poistaminen, testausdokumentin aloittaminen   |
 | Yht.  | 16   |                                                                                    |
