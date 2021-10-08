@@ -28,6 +28,12 @@ poetry install
 
 Ohjeet Poetryn lataamiseen löydät tarvittaessa esimerkiksi [täältä](https://ohjelmistotekniikka-hy.github.io/python/poetry).
 
+2. Käynnistä sovellus komennolla:
+
+```bash
+poetry run invoke start
+```
+
 ## Testaus
 
 1. Testit voi suorittaa komennolla:
