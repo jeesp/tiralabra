@@ -1,4 +1,5 @@
 import math
+import time
 from data.load_data import load_traindata, load_testdata
 from ui.ui import display_gui
 
@@ -10,23 +11,33 @@ class App:
         self.traindata = load_traindata()
         self.testdata = load_testdata()
         self.nearest_neighbors = []
-        self.test_samples = self.testdata[:9]
+        self.test_samples = self.testdata[:100]
         self.input_image = []
         self.guess = []
+        self.right_answers = 0
+        self.guesses = 0
+        self.success_rate = 0.0
     def start(self):
+        """
+        Metodi sovelluksen käynnistämiseen.
+        """
         i = 0
         x = 0
         display_gui(self)
+        # Loop for testing the accuracy
+        # comment off the display_gui(self) above if you want to try this
+        #starting_time = time.time()
         #for image in self.testdata:
         #    self.input_image = image
-        #    
+        #    self.process_image()
         #    if self.guess[0] == self.input_image[1]:
         #        x += 1
         #    i += 1
-        #    print(str(x/i*100) + "%")
-        #    display_gui(self)
-        #    if i >= 1:
+        #    print(str(round(x/i*100, 2)) + "%")
+        #    if i >= 100:
         #        break
+        #end_time = time.time()
+        #print("Aikaa kului ", round(end_time-starting_time, 2), " sekuntia")
 
     def process_image(self):
         """
@@ -55,6 +66,10 @@ class App:
                     self.nearest_neighbors = self.nearest_neighbors[:7]
 
         self.guess = self.calculate_the_guess()
+        self.guesses += 1
+        if self.guess[0] == self.input_image[1]:
+            self.right_answers += 1
+        self.success_rate = self.right_answers/self.guesses*100
     def distance_calculation(self, row1, row2):
         """
         Metodi laskee yksittäisen rivin etäisyyden testattavan kuvan
@@ -68,6 +83,9 @@ class App:
         return math.sqrt(distance)
 
     def calculate_the_guess(self):
+        """
+        Metodi koneen veikkauksen laskemiseen.
+        """
         nearest = {}
         for neighbor in self.nearest_neighbors:
             if neighbor[1] not in nearest:

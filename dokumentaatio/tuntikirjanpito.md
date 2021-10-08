@@ -11,4 +11,7 @@
 | 29.9. | 4    | Piirto-ominaisuuden edistämistä, bytearrayn koon muuttamista                       |
 | 30.9. | 4    | Piirto-ominaisuuden hylkääminen ja "kuvavalikon" aloittaminen                      |
 | 2.10. | 2    | Listan valmiin järjestämisalgoritmin poistaminen, testausdokumentin aloittaminen   |
+| 6.10. | 3    | Käyttöliittymän muokkausta                                                         |
+| 7.10. | 4    | Koodin rakenteen muutoksia, yleisiä päivityksiä ja parannuksia                     |
+| 8.10. | 4    | Koodikatselmus, tarkkuustestien suorittamista, dokumentaation päivittämistä        |
 | Yht.  | 16   |                                                                                    |
