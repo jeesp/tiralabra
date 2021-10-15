@@ -6,6 +6,8 @@ def main():
     """
     app = App()
     app.start()
+    # Jos haluat testata ohjelman tarkkuutta,
+    # vaihda app.start() -> app.test_accuracy()
 
 if __name__ == "__main__":
     main()

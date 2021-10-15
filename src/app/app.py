@@ -17,37 +17,39 @@ class App:
         self.right_answers = 0
         self.guesses = 0
         self.success_rate = 0.0
+        self.k = 7
     def start(self):
         """
         Metodi sovelluksen käynnistämiseen.
         """
+        display_gui(self)
+
+    def test_accuracy(self):
         i = 0
         x = 0
-        display_gui(self)
-        # Loop for testing the accuracy
-        # comment off the display_gui(self) above if you want to try this
-        #starting_time = time.time()
-        #for image in self.testdata:
-        #    self.input_image = image
-        #    self.process_image()
-        #    if self.guess[0] == self.input_image[1]:
-        #        x += 1
-        #    i += 1
-        #    print(str(round(x/i*100, 2)) + "%")
-        #    if i >= 100:
-        #        break
-        #end_time = time.time()
-        #print("Aikaa kului ", round(end_time-starting_time, 2), " sekuntia")
-
+        starting_time = time.time()
+        for image in self.testdata:
+            self.input_image = image
+            self.process_image()
+            if self.guess[0] == self.input_image[1]:
+                x += 1
+            i += 1
+            print(str(round(x/i*100, 2)) + "%")
+            if i >= 100:
+                break
+        end_time = time.time()
+        print("Aikaa kului ", round(end_time-starting_time, 2), " sekuntia")
     def process_image(self):
         """
         Metodi syötekuvan käsittelyyn.
         """
+        # Looppi käy läpi vertailudatan, ja lisää kuvia lähimpien naapurien listaan
+        # mikäli niitä siihen vielä mahtuu. Jos ei, rajataan lista takaisin k:n pituiseksi
         self.nearest_neighbors = []
         for image in self.traindata:
             i = 0
             distance = 0
-            added = False
+            in_list = False
             while i < len(self.input_image[0]):
                 distance += self.distance_calculation(self.input_image[0][i], image[0][i])
                 i += 1
@@ -55,15 +57,15 @@ class App:
             while i < len(self.nearest_neighbors):
                 if distance < self.nearest_neighbors[i][2]:
                     self.nearest_neighbors.insert(i, (image[0], image[1], distance))
-                    added = True
+                    in_list = True
                     break
                 i += 1
-            if i < 7:
-                if not added:
+            if i < self.k:
+                if not in_list:
                     self.nearest_neighbors.append((image[0], image[1], distance))
             else:
-                if not added:
-                    self.nearest_neighbors = self.nearest_neighbors[:7]
+                if not in_list:
+                    self.nearest_neighbors = self.nearest_neighbors[:self.k]
 
         self.guess = self.calculate_the_guess()
         self.guesses += 1
