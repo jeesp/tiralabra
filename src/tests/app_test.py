@@ -16,13 +16,13 @@ class TestApp(unittest.TestCase):
     def test_process_image(self):
         self.app.input_image = self.app.testdata[0]
         self.app.process_image()
-        self.assertEqual(len(self.app.nearest_neighbors), 7)
-        self.assertGreater(self.app.nearest_neighbors[1][2],self.app.nearest_neighbors[0][2])
-        self.assertGreater(self.app.nearest_neighbors[2][2],self.app.nearest_neighbors[1][2])
-        self.assertGreater(self.app.nearest_neighbors[3][2],self.app.nearest_neighbors[2][2])
-        self.assertGreater(self.app.nearest_neighbors[4][2],self.app.nearest_neighbors[3][2])
-        self.assertGreater(self.app.nearest_neighbors[5][2],self.app.nearest_neighbors[4][2])
-        self.assertGreater(self.app.nearest_neighbors[6][2],self.app.nearest_neighbors[5][2])
+        self.assertEqual(len(self.app.nearest_neighbors), self.app.k)
+        i = 1
+        if self.app.k > 1:
+            while i < self.app.k:
+                self.assertGreater(self.app.nearest_neighbors[i][2], self.app.nearest_neighbors[i-1][2])
+                i += 1
+
     def test_calculate_guess(self):
         self.app.input_image = self.app.testdata[0]
         self.app.process_image()

@@ -1,6 +1,6 @@
 import math
 import time
-from data.load_data import load_traindata, load_testdata
+from data.load_data import load_data
 from ui.ui import display_gui
 
 class App:
@@ -8,8 +8,10 @@ class App:
     Luokka sovelluslogiikan pyörittämiseen.
     """
     def __init__(self):
-        self.traindata = load_traindata()
-        self.testdata = load_testdata()
+        self.traindata_size = 10000
+        self.testdata_size = 1000
+        self.traindata = load_data(True, self.traindata_size)
+        self.testdata = load_data(False, self.testdata_size)
         self.nearest_neighbors = []
         self.test_samples = self.testdata[:100]
         self.input_image = []
@@ -17,7 +19,7 @@ class App:
         self.right_answers = 0
         self.guesses = 0
         self.success_rate = 0.0
-        self.k = 7
+        self.k = 5
     def start(self):
         """
         Metodi sovelluksen käynnistämiseen.
@@ -25,6 +27,10 @@ class App:
         display_gui(self)
 
     def test_accuracy(self):
+        """
+        Metodi ohjelman onnistumisprosentin laskemiseen.
+        Testin voi suorittaa index-tiedostosta.
+        """
         i = 0
         x = 0
         starting_time = time.time()
@@ -35,8 +41,8 @@ class App:
                 x += 1
             i += 1
             print(str(round(x/i*100, 2)) + "%")
-            if i >= 100:
-                break
+            if i%100 == 0:
+                print("sekunteja:", round(time.time() - starting_time, 2))
         end_time = time.time()
         print("Aikaa kului ", round(end_time-starting_time, 2), " sekuntia")
     def process_image(self):
