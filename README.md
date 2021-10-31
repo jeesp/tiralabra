@@ -7,6 +7,7 @@ Projektissa toteutetaan ohjelma käsinkirjoitetun numeron tunnistamiseen.
 [Määrittelydokumentti](https://github.com/jeesp/tiralabra/blob/main/dokumentaatio/maarittelydokumentti.md)
 [Testausdokumentti](https://github.com/jeesp/tiralabra/blob/main/dokumentaatio/testausdokumentti.md)
 [Toteutusdokumentti](https://github.com/jeesp/tiralabra/blob/main/dokumentaatio/toteutusdokumentti.md)
+[Käyttöohje](https://github.com/jeesp/tiralabra/blob/main/dokumentaatio/kayttoohje.md)
 
 ## Viikkoraportit
 

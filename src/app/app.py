@@ -8,7 +8,7 @@ class App:
     Luokka sovelluslogiikan pyörittämiseen.
     """
     def __init__(self):
-        self.traindata_size = 10000
+        self.traindata_size = 1000
         self.testdata_size = 1000
         self.traindata = load_data(True, self.traindata_size)
         self.testdata = load_data(False, self.testdata_size)
@@ -19,7 +19,7 @@ class App:
         self.right_answers = 0
         self.guesses = 0
         self.success_rate = 0.0
-        self.k = 5
+        self.k = 6
     def start(self):
         """
         Metodi sovelluksen käynnistämiseen.

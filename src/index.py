@@ -5,7 +5,7 @@ def main():
     Metodi sovelluksen käynnistämiseen.
     """
     app = App()
-    app.test_accuracy()
+    app.start()
     # Jos haluat testata ohjelman tarkkuutta,
     # vaihda app.start() -> app.test_accuracy()
     # Testidatan kokoa voi muuttaa luokan App muuttujasta testdata_size
